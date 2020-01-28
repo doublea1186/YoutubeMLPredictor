@@ -51,9 +51,7 @@ feature_imp = pd.Series(clf.feature_importances_, index=continous_name).sort_val
 np.set_printoptions(suppress=True)
 pred = np.ceil(clf.predict(X1))
 org = np.array(y_test).astype("float32")
-err = ((pred - org) / org) * 100.0
 
 print("R^2 Score : ", 100 * clf.score(x_train, y_train))
 print(feature_imp)
-print(err)
 print("--- %s seconds ---" % (time.time() - start_time))
